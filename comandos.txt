@@ -2,4 +2,6 @@ git init
 git branch
 git switch
 git commit
+git log
+git merge
 
