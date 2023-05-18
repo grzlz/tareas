@@ -4,4 +4,6 @@ git switch
 git commit
 git log
 git merge
+git checkout
+git clone
 
