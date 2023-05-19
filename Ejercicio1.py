@@ -1,10 +1,19 @@
+from random import(randint)
 print("¡Hola usuario!")
-numero = input("Pon un número para calcular si es par o non.")
+numero1 = input("Elige un número del 1 al 10 para que la computadora adivine.")
 
-if numero.isnumeric():
-    if int(numero) % 2 == 0:
-        print("el número es par.")
+numero_random = randint(1,1)
+
+if numero1.isnumeric():
+    if numero_random == int(numero1):
+        print("La computadora adivinó el número")
     else:
-        print("el número es non.")
-else: 
+        print("La computadora no adivinó el número")
+else:
     print("ingresa un número valido.")
+
+
+
+
+
+
