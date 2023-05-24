@@ -1,4 +1,24 @@
-import random
+from random import randint
 print("Welcome to the number guessing game!")
-user_guess = int(input("Guess a number between 1-10"))
+
 computer_choice = randint(1,10)
+
+keep_playing = True
+
+
+while keep_playing == True:
+    user_guess = int(input("Guess a number between 1-10"))
+    if user_guess == computer_choice:
+        print("Your guess is correct.")
+        keep_playing1 = input("Do you want to keep playing? Pres y for yes and n for no.")
+        if keep_playing1 == "y":
+            keep_playing == True
+        if keep_playing1 == "n":
+            keep_playing == False
+    else:
+        print("Your guess is incorrect.")
+        keep_playing2 = input("Do you want to keep playing? Pres y for yes and n for no.")
+        if keep_playing2 == "y":
+            keep_playing == True
+        if keep_playing2 == "n":
+            keep_playing == False
