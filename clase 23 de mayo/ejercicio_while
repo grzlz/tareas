@@ -1,0 +1,4 @@
+import random
+print("Welcome to the number guessing game!")
+user_guess = int(input("Guess a number between 1-10"))
+computer_choice = randint(1,10)

@@ -1,19 +1,41 @@
-from random import(randint)
-print("¡Hola usuario!")
-numero1 = input("Elige un número del 1 al 10 para que la computadora adivine.")
+import random
 
-numero_random = randint(1,1)
+def jugar():
+    elecciones = ["piedra", "papel", "tijera"]
+    print("Bienvenido a piedra,papel o tijera.")
 
-if numero1.isnumeric():
-    if numero_random == int(numero1):
-        print("La computadora adivinó el número")
+    while True:
+        jugador = input("Ingresa tu elección (piedra/papel/tijera) o 'q' para : ").lower()
+
+        if jugador == "q":
+            print("Gracias por jugar.")
+            break
+
+        if jugador not in elecciones:
+            print("Ingresa un elección válida.")
+            continue
+
+        computadora = random.choice(elecciones)
+
+        print(f"\nElegiste: {jugador}")
+        print(f"La computadora elige: {computadora}\n")
+
+        resultado = determinar_ganador(jugador, computadora)
+        print(resultado)
+        print()
+def determinar_ganador(jugador, computadora):
+    if jugador == computadora:
+        return "Es un empate"
+    elif (
+        (jugador == "piedra" and computadora == "tijera")
+        or (jugador == "papel" and computadora == "piedra")
+        or (jugador == "tijera" and computadora == "papel")
+    ):
+        return "Ganaste!"
     else:
-        print("La computadora no adivinó el número")
-else:
-    print("ingresa un número valido.")
+        return "Gana la computadora!"
 
-
-
+jugar()
 
 
 
